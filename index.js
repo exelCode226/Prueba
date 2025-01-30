@@ -3,6 +3,7 @@ import 'dotenv/config'; // Importa dotenv correctamente
 import configs from './src/config/env.js';
 import morgan from 'morgan';
 import productsRoutes from './src/routes/productsRoutes.js'
+import categoryRoutes from './src/routes/categoryRoutes.js'
 const app = express();
 app.use(morgan('dev'))
 app.use(express.json())
@@ -13,6 +14,7 @@ app.get('/',(req,res)=> {
 
 
 app.use('/api',productsRoutes)
+app.use('/api',categoryRoutes)
 
 app.listen(configs.port, () => {
     console.log(`Servidor escuchando por el puerto ${configs.port}`);
