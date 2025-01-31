@@ -4,10 +4,11 @@ import configs from './src/config/env.js';
 import morgan from 'morgan';
 import productsRoutes from './src/routes/productsRoutes.js'
 import categoryRoutes from './src/routes/categoryRoutes.js'
+import cors from 'cors'
 const app = express();
 app.use(morgan('dev'))
 app.use(express.json())
-
+app.use(cors())
 app.get('/',(req,res)=> {
     res.json({Message:"Puerta entrada"})
 } )
